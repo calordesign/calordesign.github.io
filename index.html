@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Nordic Collab Oy</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<main class="wrapper" role="main">
+		<img src="assets/img/building-website.svg" alt="Under construction illustration" class="hero-illustration" />
+		<div class="card">
+			<h1>We’re Under Construction</h1>
+			<p class="company">Nordic Collab Oy</p>
+			<p class="lead">We’re working on something great. In the meantime, visit our e‑commerce:</p>
+
+			<p class="link-wrap">
+				<a class="cta" href="https://www.calornutrition.fi" target="_blank" rel="noopener noreferrer">Here’s our e‑commerce</a>
+			</p>
+
+			<p class="small">Questions? Email <a href="mailto:info@calornutrition.fi">info@calornutrition.fi</a></p>
+		</div>
+
+		<footer class="footer">© <span id="year"></span> Nordic Collab Oy</footer>
+	</main>
+
+	<script>
+		// small script to keep the footer year current
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>
+

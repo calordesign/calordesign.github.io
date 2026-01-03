@@ -1,0 +1,105 @@
+/* Minimal responsive styles for the under-construction page */
+:root{
+  --bg1: #ffffff; /* page background */
+  --bg2: #ffffff;
+  --card-bg: #071a3a; /* dark blue card background */
+  --card-text: #ffffff; /* text color used inside the card */
+  --accent: #ff7a00; /* orange accent */
+  --muted: #6b7280; /* muted text on white */
+  --text: #0f172a; /* primary text on white */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg1);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.wrapper{
+  width:100%;
+  max-width:900px;
+}
+
+.card{
+  background: var(--card-bg);
+  color: var(--card-text);
+  border-radius:12px;
+  padding:48px 36px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.618);
+  border: 1px solid rgba(255,255,255,0.04);
+  text-align:center;
+}
+
+/* Adjust text colors for elements inside the dark card */
+.card .lead{color: rgba(255,255,255,0.9)}
+.card .small{color: rgba(255,255,255,0.78)}
+.card .small a{color:var(--accent)}
+
+/* Illustration sizing */
+.visual{display:block;max-width:420px;width:80%;height:auto;margin:18px auto}
+.hero-illustration{
+  display:block;
+  margin:auto;
+  width:100%;
+  max-width:520px;
+  height:auto;
+  max-height:260px; /* keep top visible and avoid overflow */
+  object-fit:contain;
+}
+.card img{display:block;max-width:100%;height:auto}
+@media (max-width:520px){
+  .hero-illustration{max-height:180px}
+}
+
+h1{
+  margin:0 0 8px 0;
+  font-size:28px;
+  letter-spacing: -0.02em;
+}
+
+.company{
+  margin:0 0 18px 0;
+  font-weight:600;
+  color:white;
+  font-size:16px;
+  display:inline-block;
+  padding:6px 12px;
+  border: 1px solid #ff7a00;
+  border-radius:8px;
+}
+
+.lead{color:var(--muted);margin:0 0 22px 0}
+
+.cta{
+  display:inline-block;
+  background:var(--accent);
+  color:rgb(255, 255, 255);
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:8px;
+  font-weight:600;
+  transition:transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 6px 18px rgba(255,122,0,0.14);
+}
+
+.cta:hover{transform:translateY(-3px);box-shadow: 0 10px 30px rgba(255,122,0,0.18)}
+
+.small{color:var(--muted);font-size:13px;margin-top:18px}
+.small a{color:var(--accent);text-decoration:none}
+
+.footer{margin-top:18px;color:rgba(15,23,42,0.5);font-size:13px;text-align:center}
+
+/* responsive */
+@media (max-width:520px){
+  .card{padding:28px 20px}
+  h1{font-size:22px}
+}
