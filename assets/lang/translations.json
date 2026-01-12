@@ -1,0 +1,30 @@
+{
+  "en": {
+    "pageTitle": "Nordic Collab Oy",
+    "heading": "We're Under Construction",
+    "company": "Nordic Collab Oy",
+    "lead": "We're working on something great. In the meantime, visit our e‑commerce.",
+    "ctaHint": "Click / Tap the logo",
+    "ctaText": "Here's our e‑commerce",
+    "contactLabel": "Contact us",
+    "phoneLabel": "Phone:",
+    "email": "info@calornutrition.fi",
+    "imgAlt": "Under construction illustration",
+    "copyright": "©",
+    "langToggle": "FI"
+  },
+  "fi": {
+    "pageTitle": "Nordic Collab Oy",
+    "heading": "Olemme rakenteilla",
+    "company": "Nordic Collab Oy",
+    "lead": "Kehitämme jotain upeaa. Sillanvälin aikana käy verkkokauppaamme:",
+    "ctaHint": "Klikkaa / Napauta logoa",
+    "ctaText": "Tässä verkkokauppamme",
+    "contactLabel": "Ota meihin yhteyttä",
+    "phoneLabel": "Puhelin:",
+    "email": "info@calornutrition.fi",
+    "imgAlt": "Työmaa-illustraatio",
+    "copyright": "©",
+    "langToggle": "EN"
+  }
+}
