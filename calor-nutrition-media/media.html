@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calor Nutrition Media</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Calor Nutrition Media</h1>
+      <p class="lead">A simple, shareable media index for downloading image assets.</p>
+    </header>
+    <main>
+      <section class="gallery" aria-label="Media gallery">
+        <!-- Figures injected here -->
+      </section>
+      <div id="empty" class="empty" style="display:none;margin-top:18px">No images found. Add an <code>img/manifest.json</code> file or place images in <code>img/</code>.</div>
+    </main>
+
+    <footer>
+      <small>All rights reserved. Calor Nutrition 2026</small>
+    </footer>
+  </div>
+
+  <script>
+    const fallback = ['img/sample-1.svg','img/sample-2.svg','img/sample-3.svg'];
+
+    function createFigure(src){
+      const fig=document.createElement('figure');fig.className='media';
+      const thumb=document.createElement('div');thumb.className='media-thumb';
+      const img=document.createElement('img');img.src=src;img.alt=src.split('/').pop();img.loading='lazy';img.decoding='async';
+
+      // ensure the browser has sizing hints
+      img.sizes = '(min-width: 720px) 220px, (min-width: 420px) 180px, 100vw';
+      img.srcset = `${src} 1x, ${src} 2x`;
+
+      const dl=document.createElement('a');dl.className='download-btn';dl.href=src;dl.setAttribute('download','');dl.setAttribute('aria-label', `Download ${img.alt}`);
+      dl.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3v12" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M8 11l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M21 21H3" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span>Download</span>`;
+
+      thumb.appendChild(img);
+      thumb.appendChild(dl);
+
+      const cap=document.createElement('figcaption');cap.className='caption';
+      const title=document.createElement('div');title.className='title';title.textContent=img.alt;
+      cap.appendChild(title);
+
+      fig.appendChild(thumb);fig.appendChild(cap);
+      return fig;
+    }
+
+    function render(list){
+      const g=document.querySelector('.gallery');g.innerHTML='';
+      if(!list || list.length===0){document.getElementById('empty').style.display='block';return}
+      document.getElementById('empty').style.display='none';
+      list.forEach(s=>g.appendChild(createFigure(s)));
+    }
+
+    fetch('img/manifest.json').then(r=>{if(!r.ok)throw new Error('no manifest');return r.json()}).then(list=>{
+      const pref=list.map(f=> f.startsWith('img/')?f:`img/${f}`);
+      render(pref);
+    }).catch(()=>{render(fallback)});
+  </script>
+</body>
+</html>
