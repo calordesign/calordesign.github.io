@@ -43,6 +43,32 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .nav-btn.primary:hover{filter:brightness(1.04);transform:translateY(-2px)}
 .note{margin:18px 0;padding:12px 14px;border-radius:10px;background:#fffef7;border:1px solid rgba(255,170,0,0.08);color:#6b4a00}
 
+/* small hint box matching the thin orange border like the .company badge on index.html */
+.hint-box{
+	display:inline-flex; /* size to content */
+	align-items:center;
+	border:1px solid var(--accent);
+	border-radius:8px;
+	padding:6px 10px; /* tighter padding to reduce height */
+	margin-top:10px;
+	background: rgba(255,255,255,0.02);
+	color:var(--card-text);
+	text-align:left;
+}
+
+.hint-box p{margin:0;font-size:0.95rem;color:rgba(255,255,255,0.92);display:flex;align-items:center;gap:8px}
+
+.hint-row{display:flex;gap:12px;margin-top:12px;justify-content:center;align-items:flex-start}
+@media (max-width:520px){
+	.hint-row{flex-direction:column;align-items:stretch;gap:8px}
+	.hint-box{display:flex;width:100%;justify-content:center}
+}
+
+/* label + icon inside the hint box */
+.hint-label{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--card-text);margin-right:8px}
+.hint-icon{width:16px;height:16px;display:inline-block;vertical-align:middle;color:var(--accent)}
+.hint-box p strong{font-weight:700;color:var(--card-text)}
+
 .gallery{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;justify-content:center;margin-top:20px}
 figure.media{background:#fcfbf9;border-radius:8px;padding:12px;border:1px solid rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:8px;align-items:center;width:240px}
 .media-thumb{width:220px;height:220px;border-radius:6px;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
