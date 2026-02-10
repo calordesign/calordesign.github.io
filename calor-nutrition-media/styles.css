@@ -1,5 +1,5 @@
 /* Public Media Styles: attractive gallery, download overlays, responsive sizes */
-:root{--bg:#f7fbff;--card:#ffffff;--muted:#5b6670;--accent:#002F6C;--radius:12px;--shadow:0 10px 30px rgba(16,24,40,0.06); --card-bg: #071a3a; --card-text: #ffffff}
+:root{--bg:#f7fbff;--card:#ffffff;--muted:#5b6670;--accent:#ff7a00;--radius:12px;--shadow:0 10px 30px rgba(16,24,40,0.06); --card-bg: #071a3a; --card-text: #ffffff}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#071226;-webkit-font-smoothing:antialiased}
@@ -22,6 +22,25 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .hero p.lead{margin:0;color:rgba(255,255,255,0.88)}
 .controls{display:flex;gap:12px;align-items:center;margin-top:12px}
 .controls .hint{color:var(--muted);font-size:0.95rem}
+
+/* Hero nav buttons (styled similar to the download buttons) */
+.nav-btn{
+	display:inline-flex;
+	gap:8px;
+	align-items:center;
+	padding:8px 12px;
+	background:rgba(255,255,255,0.95);
+	color:var(--accent);
+	text-decoration:none;
+	border-radius:8px;
+	font-weight:700;
+	border:1px solid rgba(0,0,0,0.06);
+	transition:all .16s ease;
+}
+.nav-btn svg{width:16px;height:16px}
+.nav-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(9,18,28,0.06)}
+.nav-btn.primary{background:var(--accent);color:var(--card-text);border-color:rgba(255,255,255,0.06)}
+.nav-btn.primary:hover{filter:brightness(1.04);transform:translateY(-2px)}
 .note{margin:18px 0;padding:12px 14px;border-radius:10px;background:#fffef7;border:1px solid rgba(255,170,0,0.08);color:#6b4a00}
 
 .gallery{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;justify-content:center;margin-top:20px}
