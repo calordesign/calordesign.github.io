@@ -115,22 +115,3 @@ figure.media{background:#fcfbf9;border-radius:8px;padding:12px;border:1px solid 
 /* small focus states */
 .download-btn:focus{outline:2px solid rgba(0,47,108,0.18);outline-offset:2px}
 figure.media:focus-within{box-shadow:0 12px 30px rgba(14,34,80,0.08)}
-
-/* Prevent accidental text selection on long-press and ensure
-	 native image long-press menu is available on mobile */
-.media-thumb,
-figure.media,
-.gallery{ /* avoid selecting neighboring text when interacting */
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-.media-thumb img{
-	-webkit-touch-callout: default; /* allow native long-press menu on iOS */
-	-webkit-user-drag: none;       /* prevent drag gestures that can interfere */
-	-webkit-user-select: none;
-	user-select: none;
-	touch-action: manipulation;    /* hint for simple touch gestures */
-}

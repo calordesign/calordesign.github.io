@@ -58,13 +58,6 @@
       thumb.appendChild(img);
       thumb.appendChild(dl);
 
-      // remove focus after activating the download button so the page
-      // doesn't remain focused on the link (which on some mobile
-      // browsers can cause long-press to select text instead of
-      // invoking the native image menu)
-      dl.addEventListener('click', ()=> dl.blur());
-      dl.addEventListener('touchend', ()=> dl.blur());
-
       const cap=document.createElement('figcaption');cap.className='caption';
       const title=document.createElement('div');title.className='title';title.textContent=img.alt;
       cap.appendChild(title);
