@@ -35,6 +35,10 @@ function setLanguage(lang) {
       } else {
         el.textContent = text;
       }
+      // If element has an aria-label, keep it in sync with the translation
+      if (el.hasAttribute && el.hasAttribute('aria-label')) {
+        el.setAttribute('aria-label', text);
+      }
     }
   });
 
