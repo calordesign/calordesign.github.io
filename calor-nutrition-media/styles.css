@@ -1,12 +1,25 @@
 /* Public Media Styles: attractive gallery, download overlays, responsive sizes */
-:root{--bg:#f7fbff;--card:#ffffff;--muted:#5b6670;--accent:#002F6C;--radius:12px;--shadow:0 10px 30px rgba(16,24,40,0.06)}
+:root{--bg:#f7fbff;--card:#ffffff;--muted:#5b6670;--accent:#002F6C;--radius:12px;--shadow:0 10px 30px rgba(16,24,40,0.06); --card-bg: #071a3a; --card-text: #ffffff}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#071226;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1200px;margin:0 auto;min-height:calc(100vh - 80px);display:flex;flex-direction:column;justify-content:center;padding:0 20px}
-.hero{background:linear-gradient(180deg,var(--card),#f7fbff);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
-.hero h1{margin:0;font-size:1.7rem;letter-spacing:-0.02em}
-.hero p.lead{margin:0;color:var(--muted)}
+.wrap{max-width:1200px;margin:0 auto;min-height:calc(100vh - 50px);display:flex;flex-direction:column;justify-content:center;padding:0 20px}
+.hero{
+	/* match index card styling for a seamless look */
+	background: var(--card-bg);
+	color: var(--card-text);
+	padding:28px;
+	border-radius:var(--radius);
+	box-shadow:var(--shadow);
+	display:flex;
+	flex-direction:column;
+	gap:8px;
+	align-items:center;
+	text-align:center;
+	margin-top:18px; /* give the card some breathing room from the top */
+}
+.hero h1{margin:0;font-size:1.7rem;letter-spacing:-0.02em;color:var(--card-text)}
+.hero p.lead{margin:0;color:rgba(255,255,255,0.88)}
 .controls{display:flex;gap:12px;align-items:center;margin-top:12px}
 .controls .hint{color:var(--muted);font-size:0.95rem}
 .note{margin:18px 0;padding:12px 14px;border-radius:10px;background:#fffef7;border:1px solid rgba(255,170,0,0.08);color:#6b4a00}
@@ -20,10 +33,27 @@ figure.media{background:#fcfbf9;border-radius:8px;padding:12px;border:1px solid 
 .download-btn svg{width:16px;height:16px}
 .caption{margin-top:8px;max-width:220px;text-align:center;font-size:0.85rem;word-break:break-word;color:#071226;opacity:0.8}
 .empty{padding:36px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfcff);border:1px dashed rgba(0,0,0,0.06);text-align:center;color:var(--muted)}
-.footer{margin-top:28px;color:var(--muted);font-size:0.9rem}
+.footer{margin-top:28px;color:var(--muted);font-size:0.9rem;text-align:center}
+
+/* full-width footer bar that visually separates from the card content */
+.site-footer{
+	width:100%;
+	background:var(--card-bg);
+	color:var(--card-text);
+	height:50px; /* fixed small footer height requested */
+	padding:0 20px; /* keep horizontal padding consistent with .wrap elsewhere */
+	margin-top:0; /* remove extra gap so footer is flush to bottom */
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.site-footer small{color:var(--card-text);opacity:0.92;font-size:0.95rem;line-height:1}
+
+/* if a .wrap ever appears inside .site-footer, prevent its global min-height from expanding the footer */
+.site-footer .wrap{min-height:0}
 
 @media (max-width:992px){
-	.wrap{min-height:calc(100vh - 60px)}
+	.wrap{min-height:calc(100vh - 50px)}
 }
 
 @media (max-width:768px){
